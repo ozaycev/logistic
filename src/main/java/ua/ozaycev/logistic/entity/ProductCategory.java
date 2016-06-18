@@ -19,7 +19,11 @@ import javax.persistence.Version;
 @NamedQueries(value = {
 		@NamedQuery(
 				name = "ProductCategory.findAll",
-				query = "FROM ProductCategory AS product ORDER BY product.parentProductCategory"),
+				query = "SELECT product.id as id, " +
+						"product.parentProductCategory as parentProductCategory, " +
+						"product.name as name  " +
+						"FROM ProductCategory AS product " +
+						"ORDER BY product.parentProductCategory.id"),
 		@NamedQuery(
 				name = "ProductCategory.findID",
 				query = "FROM ProductCategory AS product WHERE product.id = :id"),

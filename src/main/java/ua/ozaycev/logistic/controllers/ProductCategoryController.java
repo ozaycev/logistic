@@ -33,30 +33,21 @@ public class ProductCategoryController {
     }
 
     @RequestMapping(value = "/createProductCategory", method = RequestMethod.POST)
-    private String createProductCategory(@RequestParam(value = "name") String name, @RequestParam(value = "parentProductCategory") String parentProductCategory, @RequestParam(value = "Categoryid") long Categoryid){
+    private String createProductCategory(@RequestParam(value = "name") String name, @RequestParam(value = "parentProductCategory") long parentProductCategory, @RequestParam(value = "Categoryid") long Categoryid){
        if(Categoryid!=0){
-           if (parentProductCategory.equals("")) {
+           ProductCategory parrentOdject = productCategoryService.findById(parentProductCategory);
+           if(parrentOdject==null){
                productCategoryService.edit(Categoryid, name, null);
-           } else {
-               ProductCategory parrentOdject = productCategoryService.findById(Long.parseLong(parentProductCategory));
-               if(parrentOdject!=null){
-                   productCategoryService.edit(Categoryid, name, null);
-               }else {
-                   productCategoryService.edit(Categoryid, name, parrentOdject);
-               }
-
+           }else {
+               productCategoryService.edit(Categoryid, name, parrentOdject);
            }
 
        }else {
-           if (parentProductCategory.equals("")) {
+           ProductCategory parrentOdject = productCategoryService.findById(parentProductCategory);
+           if(parrentOdject==null){
                productCategoryService.add(name);
-           } else {
-               ProductCategory parrentOdject = productCategoryService.findById(Long.parseLong(parentProductCategory));
-               if(parrentOdject!=null){
-                   productCategoryService.add(name);
-               }else {
-                   productCategoryService.add(name, parrentOdject);
-               }
+           }else {
+               productCategoryService.add(name, parrentOdject);
            }
        }
         return "redirect:/productCategory-all";
