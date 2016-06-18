@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+    <definition name="base.definition" template="/views/tiles/layout.jsp">
+        <put-attribute name="footer" value="/views/tiles/footer.jsp"/>
+        <put-attribute name="header" value="/views/tiles/header.jsp"/>
+        <put-attribute name="body" value=""/>
+    </definition>
+
+    <definition name="registration" extends="base.definition">
+        <put-attribute name="body" value="/views/registration.jsp"/>
+        <put-attribute name="title" value="Registration"/>
+    </definition>
+
+    <definition name="productCategory-*" extends="base.definition">
+        <put-attribute name="body" value="/views/productCategory{1}.jsp"/>
+        <put-attribute name="title" value="{1} productCategory"/>
+    </definition>
+
+    <definition name="home" extends="base.definition">
+        <put-attribute name="body" value="/views/home.jsp"/>
+        <put-attribute name="title" value="Home"/>
+    </definition>
+
+    <definition name="general" extends="base.definition">
+        <put-attribute name="body" value="/views/general.jsp"/>
+        <put-attribute name="title" value="general"/>
+    </definition>
+
+    <definition name="reference" extends="base.definition">
+        <put-attribute name="body" value="/views/reference.jsp"/>
+        <put-attribute name="title" value="reference"/>
+    </definition>
+
+</tiles-definitions>
+
+
+

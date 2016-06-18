@@ -1,0 +1,52 @@
+ #logout {
+     text-align:right;
+ }
+
+ #bottomPpanel {
+     margin: 10px;
+     text-align:left;
+  }
+ .navbar-brand {
+     /*margin-bottom: 10px;*/
+ }
+
+.selected{ background: #d2d3da;}
+ *
+ {
+     margin: 0;
+     padding: 0;
+ }
+ html,
+ body {
+     height: 100%;
+ }
+ /*.wrapper {*/
+     /*position: relative;*/
+     /*min-height: 100%;*/
+ /*}*/
+ .content {
+     padding-bottom: 90px;
+     padding: 25px;
+     /*padding-left: 375px;*/
+
+ }
+ .footer {
+     position: absolute;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     height: 80px;
+     text-align: center;
+ }
+
+ /*.form-group {*/
+     /*width: 100%;*/
+ /*}*/
+
+ .modal-content {
+     padding: 10px;
+ }
+ .nav-tabs {
+
+     /*margin-left: 200px;*/
+ }
