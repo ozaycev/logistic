@@ -114,7 +114,7 @@
                                 <th scope="row">${numberTable=numberTable+1}</th>
                                 <td>${a.id}</td>
                                 <td>${a.name}</td>
-                                <td>${a.parentProductCategory.id}</td>
+                                <td>${a.parentProductCategory}</td>
 
                                 <td width="25">
                                     <a class="btn btn-danger" href="/productCategoryDelete=${a.id}">
@@ -126,8 +126,9 @@
                                        id="editTable" onclick="
                                             $('document').ready(function(){
 
-                                                this.getElementById('Categoryid').value = ${a.id};
-                                                <%--this.getElementById('parentProductCategory').value = ${a.name}--%>
+                                                this.getElementById('Categoryid').value = '${a.id}';
+                                                this.getElementById('name').value = '${a.name}';
+                                                this.getElementById('parentProductCategory').value = '${a.parentProductCategory}';
 
                                             });
                                             ">
