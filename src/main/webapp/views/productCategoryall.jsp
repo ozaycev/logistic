@@ -126,8 +126,9 @@
                                        id="editTable" onclick="
                                             $('document').ready(function(){
 
-                                                this.getElementById('Categoryid').value = ${a.id};
-                                                <%--this.getElementById('parentProductCategory').value = ${a.name}--%>
+                                                this.getElementById('Categoryid').value = '${a.id}';
+                                                this.getElementById('name').value = '${a.name}';
+                                                this.getElementById('parentProductCategory').value = '${a.parentProductCategory.id}';
 
                                             });
                                             ">
