@@ -17,7 +17,7 @@
 </head>
 <body>
 
-    <form:form method="post" action="/createNewUser" modelAttribute="user">
+    <form:form method="post" action="/createNewUser" modelAttribute="users">
        <div class="main">
 
            <div  class="form-group">

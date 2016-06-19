@@ -21,7 +21,7 @@ public class UsersController {
 
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
     private String newUser(Model model){
-        model.addAttribute("user", new Users());
+        model.addAttribute("users", new Users());
         return "registration";
     }
 

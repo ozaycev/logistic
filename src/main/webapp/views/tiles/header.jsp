@@ -34,8 +34,8 @@
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown">Documents<b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="/product">Product</a></li>
-                                <li><a href="/productCategory">Product category</a></li>
+                                <%--<li><a href="/product">Product</a></li>--%>
+                                <%--<li><a href="/productCategory">Product category</a></li>--%>
                                 <li class="divider"></li>
                             </ul>
                         </li>
@@ -43,7 +43,7 @@
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown">Reference<b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="/product">Product</a></li>
+                                <li><a href="/products-all">Product</a></li>
                                 <li><a href="/productCategory-all">Product category</a></li>
                                 <li class="divider"></li>
                             </ul>
@@ -52,12 +52,18 @@
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown">Reports<b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="/product">Product</a></li>
-                                <li><a href="/productCategory">Product category</a></li>
+                                <%--<li><a href="/product">Product</a></li>--%>
+                                <%--<li><a href="/productCategory">Product category</a></li>--%>
                                 <li class="divider"></li>
                             </ul>
                         </li>
-
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Service<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                    <li><a href="/usersSettings">Users settings</a></li>
+                                <li class="divider"></li>
+                            </ul>
+                        </li>
                     </ul>
                 </sec:authorize>
 

@@ -9,6 +9,10 @@
     <http use-expressions="true" >
 
         <intercept-url pattern="/" access="permitAll" />
+        <intercept-url pattern="/" access="hasAuthority" />
+        <!--<intercept-url pattern="/general" access="permitAll" />-->
+        <!--<intercept-url pattern="/*create*" access="hasRole('ROLE_ADMIN')"/>-->
+        <!--<intercept-url pattern="/*Delete*" access="hasRole('ROLE_ADMIN')"/>-->
 
         <logout logout-url="/logout" logout-success-url="/"/>
 
@@ -16,10 +20,12 @@
         <csrf disabled="true"/>
     </http>
 
+    <global-method-security secured-annotations="enabled" />
     <authentication-manager>
         <authentication-provider>
             <user-service>
                 <user name="admin" password="admin" authorities="ROLE_ADMIN" />
+                <user name="user" password="user" authorities="ROLE_USER" />
             </user-service>
         </authentication-provider>
         <authentication-provider user-service-ref="usersDetailsService">
