@@ -23,19 +23,19 @@ import javax.persistence.Version;
 @Table(name="products", schema="cash")
 @NamedQueries({
 	@NamedQuery(
-			name = "Product.findAll",
+			name = "Products.findAll",
 			query = "FROM Products AS product ORDER BY product.id"),
 	@NamedQuery(
-			name = "Product.findByID",
+			name = "Products.findByID",
 			query = "FROM Products AS product WHERE product.id = :id"),
 	@NamedQuery(
-			name = "Product.findByArticul",
+			name = "Products.findByArticul",
 			query = "FROM Products AS product WHERE product.articul like :articul"),
 	@NamedQuery(
-			name = "Product.findByName",
+			name = "Products.findByName",
 			query = "FROM Products AS product WHERE product.name like :name"),
 	@NamedQuery(
-				name = "ProductCategory.findByIdCategory",
+				name = "Products.findByIdCategory",
 				query = "FROM Products AS product WHERE product.category.id = :id")
 	})
 public class Products implements Serializable{
@@ -112,7 +112,7 @@ public class Products implements Serializable{
 		this.articul = articul;
 	}
 		
-	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+	@ManyToOne(cascade=CascadeType.DETACH, fetch=FetchType.LAZY)
 	@JoinColumn(name="category", referencedColumnName="id")
 	public ProductCategory getCategory() {
 		return category;

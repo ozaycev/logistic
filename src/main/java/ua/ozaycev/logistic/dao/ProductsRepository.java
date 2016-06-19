@@ -1,7 +1,7 @@
 package ua.ozaycev.logistic.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import ua.ozaycev.logistic.entity.ProductCategory;
+import org.springframework.transaction.annotation.Transactional;
 import ua.ozaycev.logistic.entity.Products;
 
 import java.util.List;
@@ -12,9 +12,12 @@ import java.util.List;
 
 public interface ProductsRepository extends JpaRepository<Products, Long> {
 
+    @Transactional
     List<Products> findByName(String name);
 
+    @Transactional
     List<Products> findByIdCategory(long id);
 
+    @Transactional
     List<Products> findByArticul(String articul);
 }

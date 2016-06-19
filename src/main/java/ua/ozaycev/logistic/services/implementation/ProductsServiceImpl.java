@@ -3,11 +3,8 @@ package ua.ozaycev.logistic.services.implementation;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.propertyeditors.StringArrayPropertyEditor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ua.ozaycev.logistic.dao.ProductCategoryRepository;
 import ua.ozaycev.logistic.dao.ProductsRepository;
 import ua.ozaycev.logistic.entity.ProductCategory;
 import ua.ozaycev.logistic.entity.Products;
@@ -23,7 +20,6 @@ import java.util.List;
 public class ProductsServiceImpl implements ProductsService {
 
     @Autowired
-    @Qualifier("productsRepository")
     private ProductsRepository productRepository;
 
     @Transactional

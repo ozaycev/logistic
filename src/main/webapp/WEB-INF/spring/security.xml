@@ -9,7 +9,7 @@
     <http use-expressions="true" >
 
         <intercept-url pattern="/" access="permitAll" />
-        <intercept-url pattern="/" access="hasAuthority" />
+        <!--<intercept-url pattern="/" access="hasAuthority" />-->
         <!--<intercept-url pattern="/general" access="permitAll" />-->
         <!--<intercept-url pattern="/*create*" access="hasRole('ROLE_ADMIN')"/>-->
         <!--<intercept-url pattern="/*Delete*" access="hasRole('ROLE_ADMIN')"/>-->
