@@ -14,10 +14,8 @@ import java.util.List;
 
 public interface ProductCategoryRepository extends JpaRepository<ProductCategory, Long> {
 
-    @Transactional
     List<ProductCategory> findByName(String name);
 
-    @Transactional
     List<ProductCategory> findByIdParrent(long idParrent);
 
 }

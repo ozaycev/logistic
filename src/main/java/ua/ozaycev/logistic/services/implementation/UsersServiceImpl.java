@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ua.ozaycev.logistic.dao.UsersRepository;
 import ua.ozaycev.logistic.entity.Users;
 import ua.ozaycev.logistic.services.UsersService;
@@ -26,7 +27,7 @@ public class UsersServiceImpl implements UsersService, UserDetailsService {
     @Autowired
     private UsersRepository usersDao;
 
-    @Override
+    @Transactional
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Users users = null;
         try {
@@ -39,14 +40,14 @@ public class UsersServiceImpl implements UsersService, UserDetailsService {
         return new User(String.valueOf(users.getId()), users.getPassword(),authorityList);
     }
 
-    @Override
+    @Transactional
     public void add(Users users) {
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
         users.setPassword(bCryptPasswordEncoder.encode(users.getPassword()));
         usersDao.save(users);
     }
 
-    @Override
+    @Transactional
     public Users findByID(int id) {
         return usersDao.findByID(id);
     }

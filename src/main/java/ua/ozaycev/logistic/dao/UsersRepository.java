@@ -12,10 +12,9 @@ import java.util.List;
  */
 public interface UsersRepository extends JpaRepository<Users, Long> {
 
-    @Transactional
+
     Users findUserByLogin(String login);
 
-     @Transactional
-     Users findByID(long id);
+    Users findByID(long id);
 
 }

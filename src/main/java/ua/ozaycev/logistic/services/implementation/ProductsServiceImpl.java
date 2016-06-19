@@ -57,7 +57,7 @@ public class ProductsServiceImpl implements ProductsService {
         return productRepository.findOne(id);
     }
 
-    @Override
+    @Transactional
     public List<Products> findByArticul(String articul) {
         return productRepository.findByArticul(articul);
     }

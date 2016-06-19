@@ -12,12 +12,9 @@ import java.util.List;
 
 public interface ProductsRepository extends JpaRepository<Products, Long> {
 
-    @Transactional
     List<Products> findByName(String name);
 
-    @Transactional
     List<Products> findByIdCategory(long id);
 
-    @Transactional
     List<Products> findByArticul(String articul);
 }
