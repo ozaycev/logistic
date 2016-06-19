@@ -20,7 +20,7 @@ public interface ProductsService {
 
     public Products findById(long id);
 
-    public List<Products> findByArtucul(String articul);
+    public List<Products> findByArticul(String articul);
 
     public List<Products> findByIdCategory(long idCategory);
 
