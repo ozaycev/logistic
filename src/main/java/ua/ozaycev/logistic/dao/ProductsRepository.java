@@ -1,7 +1,6 @@
 package ua.ozaycev.logistic.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.transaction.annotation.Transactional;
 import ua.ozaycev.logistic.entity.Products;
 
 import java.util.List;
