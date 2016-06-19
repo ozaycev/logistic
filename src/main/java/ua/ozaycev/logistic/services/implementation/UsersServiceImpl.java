@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Yulian Bulbuk on 04.06.2016.
+ * Created by Ozaycev on 04.06.2016.
  */
 @Service("usersDetailsService")
 public class UsersServiceImpl implements UsersService, UserDetailsService {

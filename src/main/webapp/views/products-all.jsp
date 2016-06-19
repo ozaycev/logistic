@@ -21,21 +21,21 @@
         <div class="col-md-12">
             <div class="container-fluid">
                 <div class="row">
-                    <form method="get" action="/productCategory-search">
+                    <form method="get" action="/products-search">
                         <div class="input-group">
                         <span class="input-group-btn">
 						 <button class="btn btn-default" type="button">
-                            <select name="selectedAtribut" >
+                            <select name="selectedAtribut">
 
                               <option>id</option>
                               <option>name</option>
                               <option>articul</option>
-                                <option>category</option>
+                              <option>category</option>
 
                             </select>
                         </button>
 						</span>
-                            <input type="text" class="form-control" name="search" placeholder="Search for..." />
+                            <input type="text" class="form-control" name="search" placeholder="Search for..."/>
 						<span class="input-group-btn">
 						<button class="btn btn-default" type="submit">Search</button>
 						</span>
@@ -63,16 +63,17 @@
                 <div class="modal-dialog modal-lg">
 
                     <div class="modal-content">
-                        <form method="post" action="/createProduct">
+                        <form method="post" action="/createProducts">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
                                 </button>
                                 <h2>Product (create)</h2>
                             </div>
-                            <div class="form-group" >
+                            <div class="form-group">
 
                                 <label for="Categoryid">Id:</label>
-                                <input type="text" class="form-control" id="Categoryid" name="Categoryid" readonly="readonly">
+                                <input type="text" class="form-control" id="Categoryid" name="Categoryid"
+                                       readonly="readonly">
 
                             </div>
                             <div class="form-group">
@@ -81,8 +82,13 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="parentProductCategory">Parrent:</label>
-                                <input type="number" class="form-control" name="parentProductCategory" id="parentProductCategory"/>
+                                <label for="articul">Articul:</label>
+                                <input type="text" class="form-control" id="articul" name="articul"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="category">Category:</label>
+                                <input type="number" class="form-control" name="category" id="category"/>
                             </div>
 
                             <button>
@@ -105,20 +111,22 @@
                             <th>#</th>
                             <th>id</th>
                             <th>name</th>
-                            <th>parrent</th>
+                            <th>articul</th>
+                            <th>category</th>
                         </tr>
                         </thead>
                         <tbody>
 
-                        <c:forEach items="${productCategoryAll}" var="a">
+                        <c:forEach items="${productsAll}" var="a">
                             <tr>
                                 <th scope="row">${numberTable=numberTable+1}</th>
                                 <td>${a.id}</td>
                                 <td>${a.name}</td>
-                                <td>${a.parentProductCategory.id}</td>
+                                <td>${a.articul}</td>
+                                <td>${a.category.id}</td>
 
                                 <td width="25">
-                                    <a class="btn btn-danger" href="/productCategoryDelete=${a.id}">
+                                    <a class="btn btn-danger" href="/productsDelete=${a.id}">
                                         <i class="fa fa-times" aria-hidden="true"></i> Del
                                     </a>
                                 </td>
@@ -127,9 +135,10 @@
                                        id="editTable" onclick="
                                             $('document').ready(function(){
 
-                                                this.getElementById('Categoryid').value = '${a.id}';
-                                                this.getElementById('name').value = '${a.name}';
-                                                this.getElementById('parentProductCategory').value = '${a.parentProductCategory.id}';
+                                            this.getElementById('Categoryid').value = '${a.id}';
+                                            this.getElementById('name').value = '${a.name}';
+                                            this.getElementById('articul').value = '${a.articul}';
+                                            this.getElementById('category').value = '${a.category.id}';
 
                                             });
                                             ">

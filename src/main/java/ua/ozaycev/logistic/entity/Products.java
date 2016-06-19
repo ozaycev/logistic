@@ -26,14 +26,17 @@ import javax.persistence.Version;
 			name = "Product.findAll",
 			query = "FROM Products AS product ORDER BY product.id"),
 	@NamedQuery(
-			name = "Product.findID",
+			name = "Product.findByID",
 			query = "FROM Products AS product WHERE product.id = :id"),
 	@NamedQuery(
-			name = "Product.findArticul",
+			name = "Product.findByArticul",
 			query = "FROM Products AS product WHERE product.articul like :articul"),
 	@NamedQuery(
-			name = "Product.findName",
-			query = "FROM Products AS product WHERE product.name like :name")
+			name = "Product.findByName",
+			query = "FROM Products AS product WHERE product.name like :name"),
+	@NamedQuery(
+				name = "ProductCategory.findByIdCategory",
+				query = "FROM Products AS product WHERE product.category.id = :id")
 	})
 public class Products implements Serializable{
 

@@ -8,7 +8,7 @@ import ua.ozaycev.logistic.entity.Users;
 import java.util.List;
 
 /**
- * Created by Yulian Bulbuk on 04.06.2016.
+ * Created by Ozaycev on 04.06.2016.
  */
 public interface UsersRepository extends JpaRepository<Users, Long> {
 

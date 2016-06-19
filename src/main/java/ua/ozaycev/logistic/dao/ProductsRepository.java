@@ -1,24 +1,20 @@
 package ua.ozaycev.logistic.dao;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 import ua.ozaycev.logistic.entity.ProductCategory;
+import ua.ozaycev.logistic.entity.Products;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.transaction.TransactionManager;
 import java.util.List;
 
 /**
  * Created by Ozaycev on 29.05.2016.
  */
 
-public interface ProductsRepository extends JpaRepository<ProductCategory, Long> {
+public interface ProductsRepository extends JpaRepository<Products, Long> {
 
-//    @Autowired
-//    @PersistenceContext(unitName = "Main")
-//    EntityManager entityManager = null;
+    List<Products> findByName(String name);
 
-//   List<ProductCategory> findByName(String name);
+    List<Products> findByIdCategory(long id);
+
+    List<Products> findByArticul(String articul);
 }

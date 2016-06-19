@@ -4,9 +4,12 @@ package ua.ozaycev.logistic.services.implementation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.propertyeditors.StringArrayPropertyEditor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ua.ozaycev.logistic.dao.ProductCategoryRepository;
 import ua.ozaycev.logistic.dao.ProductsRepository;
+import ua.ozaycev.logistic.entity.ProductCategory;
 import ua.ozaycev.logistic.entity.Products;
 import ua.ozaycev.logistic.services.ProductsService;
 
@@ -14,72 +17,74 @@ import java.util.List;
 
 
 /**
- * Created by Yulian Bulbuk on 21.05.2016.
+ * Created by Ozaycev on 21.05.2016.
  */
 @Service
 public class ProductsServiceImpl implements ProductsService {
 
     @Autowired
     @Qualifier("productsRepository")
-    private ProductsRepository productsRepository;
+    private ProductsRepository productRepository;
 
     @Transactional
-    public void add(String name, String country) {
+    public void add(String name, String articul, ProductCategory productCategory) {
+        Products newProduct = new Products(name,articul ,productCategory);
+        productRepository.save(newProduct);
 
     }
 
     @Transactional
-    public void edit(long id, String name, String country) {
+    public void add(String name, String articul) {
+        Products newProduct = new Products(name, articul);
+        productRepository.save(newProduct);
+    }
 
+    @Transactional
+    public void add(Products product) {
+        productRepository.save(product);
+    }
+
+    @Transactional
+    public void edit(long id, String name, String articul, ProductCategory productCategory) {
+        Products product = productRepository.findOne(id);
+        if(name!=null){
+            product.setName(name);
+        }
+        if(productCategory!=null){
+            product.setCategory(productCategory);
+        }
+        productRepository.save(product);
     }
 
     @Transactional
     public Products findById(long id) {
-        return null;
+        return productRepository.findOne(id);
+    }
+
+    @Override
+    public List<Products> findByArticul(String articul) {
+        return productRepository.findByArticul(articul);
+    }
+
+    @Transactional
+    public List<Products> findByIdCategory(long idCategory) {
+        return productRepository.findByIdCategory(idCategory);
     }
 
     @Transactional
     public List<Products> findAll() {
-        return null;
+        return productRepository.findAll();
     }
 
     @Transactional
     public List<Products> findByName(String name) {
-        return null;
+        return productRepository.findByName(name);
     }
 
-//
-//
-//    @Transactional
-//    public void add(String name, String country) {
-//        Author author = new Author(name, country);
-//        authorDao.add(author);
-//    }
-//
-//    @Transactional
-//    public void edit(int id, String name, String country) {
-//        Author author = authorDao.findById(id);
-//        if(name!=null){
-//            author.setName(name);
-//        }
-//        if(country!=null){
-//            author.setCountry(country);
-//        }
-//        authorDao.edit(author);
-//    }
-//
-//    @Transactional
-//    public Author findById(int id) {
-//        return authorDao.findById(id);
-//    }
-//
-//    @Transactional
-//    public List<Author> findAll() {
-//        return authorDao.findAll();
-//    }
-//
-//    @Transactional
-//    public List<Author> findByName(String name) {
-//        return authorDao.findByName(name);
-//    }
+    @Transactional
+    public void delete(long id) {
+        Products newProduct = findById(id);
+        productRepository.delete(newProduct);
+    }
+
 }

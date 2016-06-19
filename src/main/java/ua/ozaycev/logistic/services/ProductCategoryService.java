@@ -5,7 +5,7 @@ import ua.ozaycev.logistic.entity.ProductCategory;
 import java.util.List;
 
 /**
- * Created by Yulian Bulbuk on 21.05.2016.
+ * Created by Ozaycev on 21.05.2016.
  */
 public interface ProductCategoryService {
 

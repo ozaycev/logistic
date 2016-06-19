@@ -55,7 +55,7 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
         return categoryRepository.findOne(id);
     }
 
-    @Override
+    @Transactional
     public List<ProductCategory> findByIdParrent(long idParrent) {
         return categoryRepository.findByIdParrent(idParrent);
     }

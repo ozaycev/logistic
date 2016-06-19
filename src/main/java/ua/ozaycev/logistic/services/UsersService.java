@@ -4,7 +4,7 @@ package ua.ozaycev.logistic.services;
 import ua.ozaycev.logistic.entity.Users;
 
 /**
- * Created by Yulian Bulbuk on 04.06.2016.
+ * Created by Ozaycev on 04.06.2016.
  */
 public interface UsersService {
 
