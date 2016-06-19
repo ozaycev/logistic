@@ -29,7 +29,8 @@
 
                               <option>id</option>
                               <option>name</option>
-                              <option>parrent</option>
+                              <option>articul</option>
+                                <option>category</option>
 
                             </select>
                         </button>
@@ -50,7 +51,7 @@
                     <i class="fa fa-plus"> </i> Add
                 </a>
 
-                <a class="btn btn-info" href="/productCategory-all"><i class="fa fa-refresh" aria-hidden="true">
+                <a class="btn btn-info" href="/products-all"><i class="fa fa-refresh" aria-hidden="true">
                 </i> Refresh
                 </a>
 
@@ -62,11 +63,11 @@
                 <div class="modal-dialog modal-lg">
 
                     <div class="modal-content">
-                        <form method="post" action="/createProductCategory">
+                        <form method="post" action="/createProduct">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
                                 </button>
-                                <h2>Product category(create)</h2>
+                                <h2>Product (create)</h2>
                             </div>
                             <div class="form-group" >
 

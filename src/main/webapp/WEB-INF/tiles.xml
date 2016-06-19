@@ -11,6 +11,11 @@
         <put-attribute name="body" value=""/>
     </definition>
 
+    <definition name="usersSettings" extends="base.definition">
+        <put-attribute name="body" value="/views/usersSettings.jsp"/>
+        <put-attribute name="title" value="Users settings"/>
+    </definition>
+
     <definition name="registration" extends="base.definition">
         <put-attribute name="body" value="/views/registration.jsp"/>
         <put-attribute name="title" value="Registration"/>
@@ -18,7 +23,12 @@
 
     <definition name="productCategory-*" extends="base.definition">
         <put-attribute name="body" value="/views/productCategory-{1}.jsp"/>
-        <put-attribute name="title" value="productCategory {1}"/>
+        <put-attribute name="title" value="Product category {1}"/>
+    </definition>
+
+    <definition name="products-*" extends="base.definition">
+        <put-attribute name="body" value="/views/products-{1}.jsp"/>
+        <put-attribute name="title" value="Products {1}"/>
     </definition>
 
     <definition name="home" extends="base.definition">
