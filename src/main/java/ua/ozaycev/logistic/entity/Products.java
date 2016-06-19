@@ -23,20 +23,18 @@ import javax.persistence.Table;
 			query = "FROM Products AS product ORDER BY product.id"),
 	@NamedQuery(
 			name = "Products.findByID",
-			query = "FROM Products AS product WHERE product.id = :id"),
+			query = "FROM Products AS product WHERE product.id = ?1"),
 	@NamedQuery(
 			name = "Products.findByArticul",
-			query = "FROM Products AS product WHERE product.articul like :articul"),
+			query = "FROM Products AS product WHERE product.articul like ?1"),
 	@NamedQuery(
 			name = "Products.findByName",
-			query = "FROM Products AS product WHERE product.name like :name"),
+			query = "FROM Products AS product WHERE product.name like ?1"),
 	@NamedQuery(
-				name = "Products.findByIdCategory",
-				query = "FROM Products AS product WHERE product.category.id = :id")
+			name = "Products.findByIdCategory",
+			query = "FROM Products AS product WHERE product.category.id = ?1")
 	})
-public class Products implements Serializable{
-
-	private static final long serialVersionUID = -6531119571542427771L;
+public class Products{
 
 	private long id;
 	private String name;

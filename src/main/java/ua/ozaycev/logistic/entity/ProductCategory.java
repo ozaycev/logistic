@@ -26,13 +26,13 @@ import javax.persistence.Version;
 						"ORDER BY product.parentProductCategory.id"),
 		@NamedQuery(
 				name = "ProductCategory.findID",
-				query = "FROM ProductCategory AS product WHERE product.id = :id"),
+				query = "FROM ProductCategory AS product WHERE product.id = ?1"),
 		@NamedQuery(
 				name = "ProductCategory.findName",
-				query = "FROM ProductCategory AS product WHERE product.name like :name"),
+				query = "FROM ProductCategory AS product WHERE product.name like ?1"),
 		@NamedQuery(
 				name = "ProductCategory.findByIdParrent",
-				query = "FROM ProductCategory AS product WHERE product.parentProductCategory.id = :id")
+				query = "FROM ProductCategory AS product WHERE product.parentProductCategory.id = ?1")
 })
 public class ProductCategory {
 	
