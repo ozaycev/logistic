@@ -40,24 +40,24 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/createProducts", method = RequestMethod.POST)
-    private String createProducts(@RequestParam(value = "name") String name, @RequestParam(value = "articul") String articul, @RequestParam(value = "category") long category, @RequestParam(value = "Categoryid") long Categoryid){
+    public String createProducts( @RequestParam(value = "Categoryid") long Categoryid, @RequestParam(value = "name") String name, @RequestParam(value = "articul") String articul, @RequestParam(value = "category") long category){
 
-        if(Categoryid!=0){
-            ProductCategory categoryOdject = productCategoryService.findById(category);
-           if(categoryOdject==null){
-               productService.edit(Categoryid, name, articul, null);
-           }else {
-               productService.edit(Categoryid, name, articul, categoryOdject);
-           }
-
-       }else {
-            ProductCategory categoryOdject = productCategoryService.findById(category);
-           if(categoryOdject==null){
-               productService.add(name, articul);
-           }else {
-               productService.add(name, articul, categoryOdject);
-           }
-       }
+//        if(Categoryid!=0){
+//            ProductCategory categoryOdject = productCategoryService.findById(category);
+//           if(categoryOdject==null){
+//               productService.edit(Categoryid, name, articul, null);
+//           }else {
+//               productService.edit(Categoryid, name, articul, categoryOdject);
+//           }
+//
+//       }else {
+//            ProductCategory categoryOdject = productCategoryService.findById(category);
+//           if(categoryOdject==null){
+//               productService.add(name, articul, null);
+//           }else {
+//               productService.add(name, articul, categoryOdject);
+//           }
+//       }
         return "redirect:/products-all";
     }
 

@@ -33,7 +33,7 @@ public class ProductCategoryController {
     }
 
     @RequestMapping(value = "/createProductCategory", method = RequestMethod.POST)
-    private String createProductCategory(@RequestParam(value = "name") String name, @RequestParam(value = "parentProductCategory") long parentProductCategory, @RequestParam(value = "Categoryid") long Categoryid){
+    public String createProductCategory(@RequestParam(value = "name") String name, @RequestParam(value = "parentProductCategory") long parentProductCategory, @RequestParam(value = "Categoryid") long Categoryid){
        if(Categoryid!=0){
            ProductCategory parrentOdject = productCategoryService.findById(parentProductCategory);
            if(parrentOdject==null){
