@@ -33,9 +33,15 @@ public class ProductCategoryController {
     }
 
     @RequestMapping(value = "/createProductCategory", method = RequestMethod.POST)
-    public String createProductCategory(@RequestParam(value = "name") String name, @RequestParam(value = "parentProductCategory") long parentProductCategory, @RequestParam(value = "Categoryid") long Categoryid){
-       if(Categoryid!=0){
-           ProductCategory parrentOdject = productCategoryService.findById(parentProductCategory);
+    public String createProductCategory(@RequestParam(value = "name") String name, @RequestParam(value = "parentProductCategory") String parentProductCategory, @RequestParam(value = "Categoryid") long Categoryid){
+
+        long idCategory = 0;
+        if(parentProductCategory!=""){
+            idCategory = Long.parseLong(parentProductCategory);
+        }
+
+        if(Categoryid!=0){
+           ProductCategory parrentOdject = productCategoryService.findById(idCategory);
            if(parrentOdject==null){
                productCategoryService.edit(Categoryid, name, null);
            }else {
@@ -43,7 +49,7 @@ public class ProductCategoryController {
            }
 
        }else {
-           ProductCategory parrentOdject = productCategoryService.findById(parentProductCategory);
+           ProductCategory parrentOdject = productCategoryService.findById(idCategory);
            if(parrentOdject==null){
                productCategoryService.add(name);
            }else {

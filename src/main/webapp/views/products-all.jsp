@@ -65,7 +65,7 @@
                     <div class="modal-content">
                         <form method="post" action="/createProducts">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                                 </button>
                                 <h2>Product (create)</h2>
                             </div>
