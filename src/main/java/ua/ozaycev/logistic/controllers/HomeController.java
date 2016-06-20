@@ -20,9 +20,10 @@ public class HomeController {
     public String home(HttpSession httpSession, Principal principal)
     {
         if (principal==null) {
-            return "redirect:/home";
+
         } else {
             httpSession.setAttribute("loginedUser", usersService.findByID(Integer.parseInt(principal.getName())));
+
         }
         return "home";
     }
