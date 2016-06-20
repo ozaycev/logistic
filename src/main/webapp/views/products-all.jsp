@@ -126,7 +126,7 @@
                                 <td>${a.category.id}</td>
 
                                 <td width="25">
-                                    <a class="btn btn-danger" href="/productDelete=${a.id}">
+                                    <a class="btn btn-danger" href="/productsDelete=${a.id}">
                                         <i class="fa fa-times" aria-hidden="true"></i> Del
                                     </a>
                                 </td>
