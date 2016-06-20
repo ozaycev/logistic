@@ -4,16 +4,16 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="shops", schema="cash")
-public class Shop {
+public class Shops {
 	
 	private long id;
 	private String name;
 
-	public Shop(){
+	public Shops(){
 		
 	}
 
-	public Shop(long id, String name) {
+	public Shops(long id, String name) {
 		this.id = id;
 		this.name = name;
 	}

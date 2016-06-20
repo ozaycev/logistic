@@ -8,8 +8,7 @@ public class Company {
 
 	private long id;
 	private String naame;
-	private long version;
-	
+
 	public Company(){
 		
 	}
@@ -38,15 +37,6 @@ public class Company {
 
 	public void setNaame(String naame) {
 		this.naame = naame;
-	}
-	
-	@Version
-	public long getVersion() {
-		return version;
-	}
-
-	public void setVersion(long version) {
-		this.version = version;
 	}
 
 }

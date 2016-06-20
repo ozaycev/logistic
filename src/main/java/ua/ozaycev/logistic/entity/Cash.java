@@ -8,18 +8,15 @@ public class Cash {
 	
 	private long id;
 	private String name;
-	private Shop shop;
-	private long version;
-	
+
 	public Cash(){
 		
 	}
 
-	public Cash(long id, String name, Shop shop) {
+	public Cash(long id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.shop = shop;
 	}
 
 	@Id
@@ -40,24 +37,6 @@ public class Cash {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	@Column(name="shop")
-	public Shop getShop() {
-		return shop;
-	}
-
-	public void setShop(Shop shop) {
-		this.shop = shop;
-	}
-		
-	@Version
-	public long getVersion() {
-		return version;
-	}
-
-	public void setVersion(long version) {
-		this.version = version;
 	}
 
 }
