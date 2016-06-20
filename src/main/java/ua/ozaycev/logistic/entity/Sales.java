@@ -9,8 +9,6 @@ import java.util.Set;
 @Table(name="sale", schema="cash")
 public class Sales{
 
-	private static final long serialVersionUID = -1906504802228326975L;
-
 	private long id;
 	private Date date;
 	private Set<TableSales> tableSales = new LinkedHashSet<TableSales>();

@@ -31,6 +31,7 @@ public class Company {
 		this.id = id;
 	}
 
+	@Column(name="name", length=100)
 	public String getNaame() {
 		return naame;
 	}

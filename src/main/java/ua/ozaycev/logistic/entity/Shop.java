@@ -1,7 +1,5 @@
 package ua.ozaycev.logistic.entity;
 
-import com.sun.istack.internal.NotNull;
-
 import javax.persistence.*;
 
 @Entity
@@ -45,7 +43,6 @@ public class Shop {
 	}
 
 	@Column(name="store")
-	@NotNull
 	public Store getStore() {
 		return store;
 	}
