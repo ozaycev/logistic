@@ -19,12 +19,11 @@ public class HomeController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home(HttpSession httpSession, Principal principal)
     {
-//        if (principal==null) {
-//            return "redirect:/home";
-//        } else {
-//            httpSession.setAttribute("loginedUser", usersService.findByID(Integer.parseInt(principal.getName())));
-//            return "home";
-//        }
+        if (principal==null) {
+            return "redirect:/home";
+        } else {
+            httpSession.setAttribute("loginedUser", usersService.findByID(Integer.parseInt(principal.getName())));
+        }
         return "home";
     }
 
