@@ -46,6 +46,9 @@ public class ProductsServiceImpl implements ProductsService {
         if(name!=null){
             product.setName(name);
         }
+        if(articul!=null){
+            product.setArticul(articul);
+        }
         if(productCategory!=null){
             product.setCategory(productCategory);
         }
