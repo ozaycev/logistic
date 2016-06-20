@@ -8,7 +8,7 @@ public class Store {
 
 	private long id;
 	private String name;
-	
+
 	public Store(){
 		
 	}

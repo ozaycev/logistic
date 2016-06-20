@@ -3,23 +3,19 @@ package ua.ozaycev.logistic.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name="shop", schema="cash")
+@Table(name="shops", schema="cash")
 public class Shop {
 	
 	private long id;
 	private String name;
-	private Store store;
-	private long version;
-	
+
 	public Shop(){
 		
 	}
 
-	public Shop(long id, String name, Store store) {
-		super();
+	public Shop(long id, String name) {
 		this.id = id;
 		this.name = name;
-		this.store = store;
 	}
 
 	@Id
@@ -40,24 +36,6 @@ public class Shop {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	@Column(name="store")
-	public Store getStore() {
-		return store;
-	}
-
-	public void setStore(Store store) {
-		this.store = store;
-	}
-
-	@Version
-	public long getVersion() {
-		return version;
-	}
-
-	public void setVersion(long version) {
-		this.version = version;
 	}
 
 }
