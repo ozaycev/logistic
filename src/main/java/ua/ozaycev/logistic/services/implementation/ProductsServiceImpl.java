@@ -1,7 +1,5 @@
 package ua.ozaycev.logistic.services.implementation;
 
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,7 +9,6 @@ import ua.ozaycev.logistic.entity.Products;
 import ua.ozaycev.logistic.services.ProductsService;
 
 import java.util.List;
-
 
 /**
  * Created by Ozaycev on 21.05.2016.
@@ -82,7 +79,7 @@ public class ProductsServiceImpl implements ProductsService {
 
     @Transactional
     public void delete(long id) {
-        Products newProduct = findById(id);
+        Products newProduct = this.findById(id);
         productRepository.delete(newProduct);
     }
 
